@@ -41,7 +41,7 @@ if  __name__=="__main__":
         print(cur.item, end=" ")
         cur = cur.next
 
-    removeDup(head)
+    RemoveDuplicate(head)
 
     print("\n删除重复节点后：")
     cur = head.next
