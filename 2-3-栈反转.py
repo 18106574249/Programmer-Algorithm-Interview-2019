@@ -35,16 +35,15 @@ class Stack:
 
 
 def moveBottomToTop(s):
+
     if s.empty():
         return
-    top1 = s.peek()
-    s.pop()          # 弹出栈顶元素
+    top1 = s.pop()      # 弹出栈顶元素
     if not s.empty():
         # 递归处理不包含栈顶元素的子栈
         moveBottomToTop(s)
-        top2 = s.peek()
-        s.pop()
-        # 交换栈顶元素与子栈栈顶元素 
+        top2 = s.pop()
+        # 交换栈顶元素与子栈栈顶元素
         s.push(top1)
         s.push(top2)
     else:
@@ -55,12 +54,9 @@ def reverse_stack(s):
     if s.empty():
         return
         # 把栈底元素移动到栈顶
-    print(f"1: {s.items}")
     moveBottomToTop(s)
-    print(f"2: {s.items}")
 
-    top = s.peek()
-    s.pop()
+    top = s.pop()
     # 递归处理子栈
     reverse_stack(s)
     s.push(top)
