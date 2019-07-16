@@ -36,13 +36,9 @@ class LRU:
 
 if __name__ == "__main__":
     # 假设缓存大小为3
-    lru = LRU(3)
-    # 访问page 
-    lru.accessPage(1)
-    lru.accessPage(2)
-    lru.accessPage(5)
-    lru.accessPage(1)
-    lru.accessPage(6)
-    lru.accessPage(7)
+    lru = LRU(5)
+    # 访问page
+    for i in range(19):
+        lru.accessPage(i)
     # 通过上面的访问序列后，缓存的信息为
     lru.printQueue()
